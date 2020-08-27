@@ -1,0 +1,12 @@
+{
+        "geral": [
+            {
+                "pergunta": "vai ter prova?",
+                "resposta": "sim"
+            }
+        ],
+        "Inscricoes": {
+            "pergunta": "vai ter aula?",
+            "resposta": "nao" 
+        }
+}

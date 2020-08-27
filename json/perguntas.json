@@ -1,0 +1,51 @@
+[
+    {
+        "pergunta":"Oi tudo bem?",
+        "resposta":"Tudo sim e vc?"
+        
+    },
+    {
+        "pergunta":"O que é o Vestibulinho?",
+        "resposta":"É um processo seletivo que seleciona candidatos para as Escolas Técnicas Estaduais (Etecs) , neste semestre por conta da pandemia do COVID-19, o processo classificatório será realizado mediante análise de rendimento escolar para os Cursos do Ensino Técnico. Excepcionalmente não será aplicada prova presencial para o presente Processo Seletivo-Vestibulinho."
+        
+    },
+    {
+        "pergunta":"Vai ter prova?",
+        "resposta":"Por conta da pandemia do COVID-19 não serão aplicadas provas presenciais. O critério adotado é o da análise do histórico escolar. A classificação final vai considerar a média aritmética simples das notas das disciplinas de português e matemática da 1ª série do Ensino Médio."
+        
+    },
+    {
+        "pergunta":"O Vestibulinho oferece vagas para quais cursos? ",
+        "resposta":"Curso técnico (presencial)Curso técnico a distância EAD (semipresencial),Curso técnico a distância EAD (on-line),Cursos técnicos de especialização (presencial e on-line )"
+        
+    },
+    {
+        "pergunta":"Quem pode tentar uma vaga nos cursos técnicos presenciais, semipresenciais e on-line? ",
+        "resposta":"Quem já concluiu o Ensino Médio ou equivalente ou ainda está cursando o Ensino Médio nas modalidades regular (estarmatriculado na 2ª ou 3ª série do Ensino Médio), EJA (a partir do 2º semestre ou 2 (dois) certificados de aprovação em áreas de estudos ) ou Boletim de Aprovação  do ENCCEJA (Exame Nacional para Certificação de Competências de Jovens e Adultos)."
+        
+    },    
+    {
+        "pergunta":"Como faço a inscrição? ",
+        "resposta":"Pelo site www.vestibulinhoetec.com.br. É preciso preencher a ficha de inscrição pela internet e pagar a taxa no valor de R$ 19,00 (dezenove reais). Se não pagar até 24 de julho a inscrição vai ser cancelada. O dinheiro pago depois dessa data não será devolvido."
+        
+    },
+    {
+        "pergunta":"Quando começam as inscrições para o Vestibulinho? ",
+        "resposta":"A partir do dia 07 de julho no site www.vestibulinhoetec.com.br"
+        
+    },    
+    {
+        "pergunta":"Até quando posso me inscrever para o Vestibulinho? ",
+        "resposta":"Até as 15 horas do dia 24 de julho pelo site www.vestibulinhoetec.com.br"
+        
+    },    
+    {
+        "pergunta":"Quais documentos de identificação preciso para me inscrever? ",
+        "resposta":"Para se inscrever o interessado precisa fazer upload dos seguintes documentos: CPF,Documento de Identificação (RG ou RNE),uma foto recente de rosto"
+    },    
+    {
+        "pergunta":"Quando será divulgada a lista de classificação geral do Vestibulinho? ",
+        "resposta":"A partir do dia 07/08, no site www.vestibulinhoetec.com.br"
+    }
+
+]
