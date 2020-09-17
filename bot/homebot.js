@@ -23,10 +23,9 @@ bot.start((ctx) => {
     ctx.reply('eu sou o seu bot \n como posso estar te ajudando?')
 });
 
-bot.on('text', async ctx=> {
+bot.on('text', ctx=> {
     console.log("Passei aqui -> "+ctx.message.text)
     //ctx.reply(ctx.message.text)
-    try{
     con.connect();
     con.query('SELECT c.resposta from conversa AS c WHERE pergunta = '+'"'+ctx.message.text+'"', function (error, results, fields) {
         if (error) throw error;
@@ -34,9 +33,7 @@ bot.on('text', async ctx=> {
         ctx.reply(results[0].resposta);
       });
     con.end;
-    }finally{
-        con.end;  
-    }
+
 });
 
 /*     ///ESSE DAQUI DEU CERTO
