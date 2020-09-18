@@ -3,17 +3,26 @@ const Telegraf = require('telegraf')
 const Markup = require('telegraf/markup')
 const bot = new Telegraf(env.token)
 var json = require('../json/perguntas.json');
-var mysql = require('mysql'); 
+//const knex = require('./database')
+//const express = require('express')
+
+//const knexfile = require('../knexfile')
+//const knex = require('knex')(knexfile['development'])
+const knex = require('knex')
+const knexfile = require('../knexfile').development
+const db = knex(knexfile)
+
 
 //CTRL +  ALT + N > START
 //CTRL +  ALT + M > BREAK
-
+/*
+var mysql = require('mysql'); 
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "telegram"
-  });
+  });*/
 
 
   //Primeiro passo a msg que vai aparecer
@@ -24,11 +33,32 @@ bot.start((ctx) => {
 });
 
 bot.on('text',  ctx=> {
-    console.log("Passei aqui -> "+ctx.message.text)
+   // var results = knex('conversa').where({pergunta: 'oi'})
+   msg = ctx.message.text
+   console.log(msg)
+   var results = db.select('resposta').from('conversa').where('pergunta',msg)
+
+   results.then(function(rows){
+      //console.log('SUA RESPOSTA E ESSA DAQUI '+rows[0].resposta)
+      if(rows[0].resposta == '123abc'){
+        var date = new Date();
+        var current_hour = date.getHours();
+        ctx.reply(current_hour);
+    }else{
+    ctx.reply(rows[0].resposta);
+    }
+   })    
+    //ctx.reply(results)
+});
+
+/*
+bot.on('text',  ctx=> {
+    msg = ctx.message.text
+    console.log("Passei aqui -> "+msg)
     //ctx.reply(ctx.message.text)
     try{
     con.connect();
-    con.query('SELECT c.resposta from conversa AS c WHERE pergunta = '+'"'+ctx.message.text+'"', function (error, results, fields) {
+    con.query('SELECT c.resposta from conversa AS c WHERE pergunta = '+'"'+msg+'"', function (error, results, fields) {
         if (error) throw error;
        // console.log('Resposta -> '+ results[0].resposta);
         ctx.reply(results[0].resposta);
@@ -37,7 +67,7 @@ bot.on('text',  ctx=> {
     }finally{
         con.end;
     }
-});
+});*/
 
 /*     ///ESSE DAQUI DEU CERTO
 con.connect();
