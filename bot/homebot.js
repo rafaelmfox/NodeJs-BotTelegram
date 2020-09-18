@@ -1,6 +1,6 @@
+const Telegraf = require('telegraf')
 const env = require('../config/.env')
 const bot = new Telegraf(env.token)
-const Telegraf = require('telegraf')
 ///const Markup = require('telegraf/markup') //teclado no telegram
 
 
@@ -28,7 +28,12 @@ bot.on('text',  ctx=> {
 
    results.then(function(rows){
       //console.log('SUA RESPOSTA E ESSA DAQUI '+rows[0].resposta)
-      if(rows[0].resposta == '123abc'){
+
+      //console.log(rows)
+      if(rows == ""){
+        //console.log("Veio Vazio")
+        ctx.reply("Nao entendi sua pergunta");
+      }else if(rows[0].resposta == '123abc'){
         var date = new Date();
         var current_hour = date.getHours();
         ctx.reply(current_hour);
