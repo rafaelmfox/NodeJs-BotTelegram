@@ -29,10 +29,31 @@ var con = mysql.createConnection({
 bot.start((ctx) => {
     const primeiroNomeUsuario = ctx.from.first_name
     ctx.reply('Oi, Seja bem vindo: '+primeiroNomeUsuario)
-    ctx.reply('eu sou o seu bot \ncomo posso estar te ajudando?')
+    ctx.reply(' -listar ')
 });
 
-bot.on('text',  ctx=> {
+bot.hears('-listar',  ctx=> {
+    // var results = knex('conversa').where({pergunta: 'oi'})
+    msg = ctx.message.text
+    //console.log(msg)
+    var results = db.select('name').from('vrp_user_identities')
+ 
+    results.then(function(rows){
+        
+        for (let a = 0;a != rows.length;a++){
+            ctx.reply(rows[a].name);
+        }
+
+        //rows.forEach(element => {ctx.reply(element.name) })
+     
+        //ctx.reply(rows[1].name);
+    })    
+     //ctx.reply(results)
+ });
+
+
+
+bot.on('asllsllsls',  ctx=> {
    // var results = knex('conversa').where({pergunta: 'oi'})
    msg = ctx.message.text
    console.log(msg)

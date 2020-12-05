@@ -8,6 +8,7 @@ const db = require('../database/index')
 //CTRL +  ALT + M > BREAK
 
 
+
 //Primeiro passo a msg que vai aparecer
 bot.start((ctx) => {
     const primeiroNomeUsuario = ctx.from.first_name
@@ -17,19 +18,18 @@ bot.start((ctx) => {
 
 bot.on('text',  ctx=> {
    msg = ctx.message.text
-   console.log(msg)
-   var results = db.select('resposta').from('conversa').where('pergunta',msg)
+   console.log(msg.toLowerCase())
+   var results = db.select('resposta').from('conversa').where('pergunta',msg.toLowerCase())
    results.then(function(rows){
       if(rows == ""){
         ctx.reply("Nao entendi sua pergunta");
-      }else if(rows[0].resposta == '123abc'){
-        var date = new Date();
-        var current_hour = date.getHours();
-        ctx.reply(current_hour);
     }else{
-    ctx.reply(rows[0].resposta);
+    //ctx.reply(rows[0].resposta);
+    ctx.replyWithHTML(rows[0].resposta);
     }
    })    
 });
+
+
 
 bot.startPolling()
