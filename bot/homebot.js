@@ -7,8 +7,6 @@ const db = require('../database/index')
 //CTRL +  ALT + N > START
 //CTRL +  ALT + M > BREAK
 
-
-
 //Primeiro passo a msg que vai aparecer
 bot.start((ctx) => {
     const primeiroNomeUsuario = ctx.from.first_name
@@ -18,7 +16,7 @@ bot.start((ctx) => {
 
 bot.on('text',  ctx=> {
    msg = ctx.message.text
-   console.log(msg.toLowerCase())
+   //console.log(msg.toLowerCase())
    var results = db.select('resposta').from('conversa').where('pergunta',msg.toLowerCase())
    results.then(function(rows){
       if(rows == ""){
